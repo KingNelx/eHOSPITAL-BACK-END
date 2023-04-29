@@ -1,5 +1,9 @@
 package com.eHospital.EHospital.Repository;
 
-public interface RecordsRepo {
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.eHospital.EHospital.Model.Records;
+
+public interface RecordsRepo extends MongoRepository <Records, String>{
     
 }

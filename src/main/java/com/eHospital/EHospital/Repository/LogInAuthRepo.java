@@ -1,5 +1,7 @@
 package com.eHospital.EHospital.Repository;
 
-public interface LogInAuthRepo {
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface LogInAuthRepo extends MongoRepository <LogInAuthRepo, String> {
     
 }
