@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
 
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import jakarta.persistence.ElementCollection;
@@ -23,6 +24,13 @@ public class Records {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private @Getter @Setter String id;
+
+
+    @DBRef
+    private @Getter @Setter Patients patients;
+
+    @DBRef
+    private @Getter @Setter Doctors doctors;
 
     @ElementCollection
     private @Getter @Setter List <String> findings;
