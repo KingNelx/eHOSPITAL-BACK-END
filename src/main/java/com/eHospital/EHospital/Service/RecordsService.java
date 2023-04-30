@@ -25,4 +25,13 @@ public interface RecordsService {
 
     // delete records by id
     ResponseEntity<String> deleteRecordByID(String id);
+
+    // update findings
+    ResponseEntity <String> updateFindings(String id, List <String> findings);
+
+    // update diagnostics
+    ResponseEntity <String> updateDiagnostics(String id, List <String> diagnostics);
+
+    // update medications
+    ResponseEntity <String> updateMedications(String id, List <String> medications);
 }

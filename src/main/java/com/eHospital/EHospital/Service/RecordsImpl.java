@@ -80,4 +80,45 @@ public class RecordsImpl implements RecordsService {
         return ResponseEntity.ok(" RECORDS DELETED ");
     }
 
+    @Override
+    public ResponseEntity<String> updateFindings(@PathVariable String id, @RequestBody List<String> findings) {
+        Optional<Records> existingFindings = recordsRepo.findById(id);
+
+        if (!existingFindings.isPresent()) {
+            throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
+        }
+
+        Records newFindings = existingFindings.get();
+        newFindings.setFindings(findings);
+        recordsRepo.save(newFindings);
+        return ResponseEntity.ok(" FINDINGS GOT UPDATED ");
+    }
+
+    @Override
+    public ResponseEntity<String> updateDiagnostics(@PathVariable String id, @RequestBody List<String> diagnostics) {
+        Optional<Records> existingDiagnostics = recordsRepo.findById(id);
+
+        if (!existingDiagnostics.isPresent()) {
+            throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
+        }
+        Records newDiagnostics = existingDiagnostics.get();
+        newDiagnostics.setDiagnostics(diagnostics);
+        recordsRepo.save(newDiagnostics);
+
+        return ResponseEntity.ok(" DIANOSTICS GOT UPDATED ");
+    }
+
+    @Override
+    public ResponseEntity<String> updateMedications(@PathVariable String id, @RequestBody List<String> medications) {
+        Optional <Records> existingMedications = recordsRepo.findById(id);
+
+        if(!existingMedications.isPresent()){
+            throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
+        }
+        Records newMedications = existingMedications.get();
+        newMedications.setMedications(medications);
+        recordsRepo.save(newMedications);
+        return ResponseEntity.ok(" MEDICATIONS GOT UPDATED ");
+    }
+
 }
