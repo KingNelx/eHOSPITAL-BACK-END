@@ -18,5 +18,5 @@ public interface PatientsService {
     Optional <Patients> getPatientByID(String id);
 
     // update patients
-    ResponseEntity <Patients> updatePatients(String id, Patients updatePatients);
+    ResponseEntity <String> updatePatientsInfoByID(String id, Patients updatePatients);
 }

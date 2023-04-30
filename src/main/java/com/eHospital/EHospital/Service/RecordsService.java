@@ -18,7 +18,7 @@ public interface RecordsService {
     List<Records> getAllRecords();
 
     // update records by id
-    ResponseEntity<Records> updateRecords(Records updateRecords, String id);
+    ResponseEntity<String> updateRecordsByID(Records updateRecords, String id);
 
     // get records by id
     Optional<Records> getRecordsByID(String id);
