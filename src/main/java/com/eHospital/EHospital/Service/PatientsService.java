@@ -17,6 +17,10 @@ public interface PatientsService {
     // get patient with ID
     Optional <Patients> getPatientByID(String id);
 
+    // delete patient by ID
+    ResponseEntity <String> deletePatientInfoByID(String id);
+
     // update patients
     ResponseEntity <String> updatePatientsInfoByID(String id, Patients updatePatients);
+
 }
