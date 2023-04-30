@@ -10,13 +10,13 @@ import com.eHospital.EHospital.Model.Doctors;
 
 @Service
 public interface DoctorsService {
-    
+
     // get all doctors
-    List <Doctors> getAllDoctors();
+    List<Doctors> getAllDoctorsInfo();
 
     // get doctor by id
-    Optional <Doctors> getDoctorsByID(String id);
+    Optional<Doctors> getDoctorsInfoByID(String id);
 
     // update doctor by id
-    ResponseEntity <String> updateDoctorInfoByID(String id);
+    ResponseEntity<String> updateDoctorInfoByID(String id, Doctors updateDoctors);
 }
