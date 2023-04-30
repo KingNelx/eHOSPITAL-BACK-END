@@ -18,11 +18,11 @@ public interface RecordsService {
     List<Records> getAllRecords();
 
     // update records by id
-    ResponseEntity<String> updateRecordsByID(Records updateRecords, String id);
+    ResponseEntity<String> updateRecordsByID(String id, Records updateRecords);
 
     // get records by id
     Optional<Records> getRecordsByID(String id);
 
     // delete records by id
-    ResponseEntity<String> deleteRecordsById(String id);
+    ResponseEntity<String> deleteRecordByID(String id);
 }
