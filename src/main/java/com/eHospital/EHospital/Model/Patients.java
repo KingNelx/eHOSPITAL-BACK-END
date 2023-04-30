@@ -24,6 +24,8 @@ public class Patients {
     private @Getter @Setter String firstName;
     private @Getter @Setter String lastName;
     private @Getter @Setter String gender;
+    private @Getter @Setter String birthDate;
+    private @Getter @Setter int age;
     // @Lob
     // private @Getter @Setter byte[] patientPhoto;
     private @Getter @Setter String address;
