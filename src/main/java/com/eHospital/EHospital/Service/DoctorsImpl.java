@@ -31,13 +31,13 @@ public class DoctorsImpl implements DoctorsService {
     @Override
     public Optional <Doctors> getDoctorsInfoByID(@PathVariable String id){
         if(!doctorsRepo.findById(id).isPresent()){
-            throw new HttpClientErrorException(HttpStatus.NOT_FOUND)
+            throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
         }
         return doctorsRepo.findById(id);
     }
 
     @Override
-    public ResponseEntity<String> updateDoctorInfoByID(@PathVariable String id, @RequestBody Doctors updateDoctors) {
+    public ResponseEntity<String> updateDoctorsInfoByID(@PathVariable String id, @RequestBody Doctors updateDoctors) {
         Doctors existingDoctorsInfo = doctorsRepo.findById(id)
                 .orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
         existingDoctorsInfo.setFirstName(updateDoctors.getFirstName());

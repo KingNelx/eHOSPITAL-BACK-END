@@ -11,7 +11,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.Lob;
+
 
 @Document(collection = "Doctors")
 @Entity

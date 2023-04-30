@@ -18,5 +18,5 @@ public interface DoctorsService {
     Optional<Doctors> getDoctorsInfoByID(String id);
 
     // update doctor by id
-    ResponseEntity<String> updateDoctorInfoByID(String id, Doctors updateDoctors);
+    ResponseEntity<String> updateDoctorsInfoByID(String id, Doctors updateDoctors);
 }
