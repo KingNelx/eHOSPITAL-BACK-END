@@ -47,13 +47,13 @@ public class DoctorsImpl implements DoctorsService {
         existingDoctorsInfo.setAddress(updateDoctors.getAddress());
         existingDoctorsInfo.setLicenseNumber(updateDoctors.getLicenseNumber());
         existingDoctorsInfo.setCertifications(updateDoctors.getCertifications());
-        return ResponseEntity.ok(" DOCTORS INFO UPDATED ");
+        return ResponseEntity.ok(" DOCTORS INFO GOT UPDATED ");
     }
 
     @Override
     public ResponseEntity<String> updateCertifications(@PathVariable String id,
             @RequestBody List<String> certifications) {
-                
+
         Optional<Doctors> doctorsCertificateHandler = doctorsRepo.findById(id);
 
         if (!doctorsCertificateHandler.isPresent()) {
@@ -62,7 +62,7 @@ public class DoctorsImpl implements DoctorsService {
         Doctors updateInfo = doctorsCertificateHandler.get();
         updateInfo.setCertifications(certifications);
         doctorsRepo.save(updateInfo);
-        return ResponseEntity.ok(" CERTIFICATES UPDATED ");
+        return ResponseEntity.ok(" CERTIFICATES GOT UPDATED ");
     }
 
 }
