@@ -25,7 +25,6 @@ public class Records {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private @Getter @Setter String id;
 
-
     @DBRef
     private @Getter @Setter Patients patients;
 
@@ -33,9 +32,9 @@ public class Records {
     private @Getter @Setter Doctors doctors;
 
     @ElementCollection
-    private @Getter @Setter List <String> findings;
+    private @Getter @Setter List<String> findings;
     @ElementCollection
-    private @Getter @Setter List <String> diagnostics;
+    private @Getter @Setter List<String> diagnostics;
     @ElementCollection
-    private @Getter @Setter List <String> medications;
+    private @Getter @Setter List<String> medications;
 }

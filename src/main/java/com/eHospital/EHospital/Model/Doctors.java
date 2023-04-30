@@ -25,8 +25,8 @@ public class Doctors {
     private @Getter @Setter String id;
     private @Getter @Setter String firstName;
     private @Getter @Setter String lastName;
-    @Lob
-    private @Getter @Setter byte[] doctorsPhoto;
+    // @Lob
+    // private @Getter @Setter byte[] doctorsPhoto;
     private @Getter @Setter String specialization;
     private @Getter @Setter String contactNumber;
     private @Getter @Setter String email;
