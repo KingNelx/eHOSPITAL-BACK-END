@@ -29,8 +29,8 @@ public class DoctorsImpl implements DoctorsService {
     }
 
     @Override
-    public Optional <Doctors> getDoctorsInfoByID(@PathVariable String id){
-        if(!doctorsRepo.findById(id).isPresent()){
+    public Optional<Doctors> getDoctorsInfoByID(@PathVariable String id) {
+        if (!doctorsRepo.findById(id).isPresent()) {
             throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
         }
         return doctorsRepo.findById(id);
@@ -48,6 +48,21 @@ public class DoctorsImpl implements DoctorsService {
         existingDoctorsInfo.setLicenseNumber(updateDoctors.getLicenseNumber());
         existingDoctorsInfo.setCertifications(updateDoctors.getCertifications());
         return ResponseEntity.ok(" DOCTORS INFO UPDATED ");
+    }
+
+    @Override
+    public ResponseEntity<String> updateCertifications(@PathVariable String id,
+            @RequestBody List<String> certifications) {
+                
+        Optional<Doctors> doctorsCertificateHandler = doctorsRepo.findById(id);
+
+        if (!doctorsCertificateHandler.isPresent()) {
+            throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
+        }
+        Doctors updateInfo = doctorsCertificateHandler.get();
+        updateInfo.setCertifications(certifications);
+        doctorsRepo.save(updateInfo);
+        return ResponseEntity.ok(" CERTIFICATES UPDATED ");
     }
 
 }

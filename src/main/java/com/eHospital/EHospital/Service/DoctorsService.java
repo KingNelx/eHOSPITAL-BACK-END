@@ -19,4 +19,7 @@ public interface DoctorsService {
 
     // update doctor by id
     ResponseEntity<String> updateDoctorsInfoByID(String id, Doctors updateDoctors);
+
+    // update certifications
+    ResponseEntity <String> updateCertifications(String id, List <String> certifications);
 }
