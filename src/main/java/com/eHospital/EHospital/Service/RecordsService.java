@@ -12,7 +12,7 @@ import com.eHospital.EHospital.Model.Records;
 public interface RecordsService {
 
     // add new records
-    ResponseEntity<Records> addNewRecord(Records newRecords);
+    ResponseEntity<String> addNewRecords(Records newRecords);
 
     // get all records
     List<Records> getAllRecords();
