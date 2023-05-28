@@ -24,5 +24,8 @@ public class Records {
     private @Getter @Setter String emergencyContact;
     @ElementCollection
     private @Getter @Setter List<String> vitalSigns;
-
+    @ElementCollection
+    private @Getter @Setter List<String> laboratory;
+    @ElementCollection
+    private @Getter @Setter List <String> medications;
 }
