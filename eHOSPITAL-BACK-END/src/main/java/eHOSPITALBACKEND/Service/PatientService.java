@@ -22,4 +22,5 @@ public interface PatientService {
     // update patient by id
 
     // delete patient by id
+    ResponseEntity <String> removePatientsData(String id);
 }

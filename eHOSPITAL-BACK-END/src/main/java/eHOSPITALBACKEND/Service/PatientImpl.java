@@ -47,12 +47,21 @@ public class PatientImpl implements PatientService {
         return patientRepo.findAll();
     }
 
-
     @Override
-    public Optional <Patient> getPatientByID(@PathVariable String id){
-        if(!patientRepo.findById(id).isPresent()){
+    public Optional<Patient> getPatientByID(@PathVariable String id) {
+        if (!patientRepo.findById(id).isPresent()) {
             throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
         }
         return patientRepo.findById(id);
+    }
+
+    @Override
+    public ResponseEntity<String> removePatientsData(@PathVariable String id) {
+        if (!patientRepo.findById(id).isPresent()) {
+            throw new HttpClientErrorException(HttpStatus.NO_CONTENT);
+        }
+
+        patientRepo.deleteById(id);
+        return ResponseEntity.ok("Patient Data with ID: " + id + " has been deleted ");
     }
 }
