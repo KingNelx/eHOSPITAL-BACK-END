@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import jakarta.persistence.Entity;;
 
@@ -26,4 +28,7 @@ public class Patient {
     private @Getter @Setter String contactNumber;
     private @Getter @Setter int age;
     private @Getter @Setter String dateOfBirth;
+
+    @DBRef
+    private @Getter @Setter Records records;
 }
