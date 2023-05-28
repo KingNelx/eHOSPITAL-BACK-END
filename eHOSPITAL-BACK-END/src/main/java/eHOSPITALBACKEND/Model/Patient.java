@@ -12,14 +12,14 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import jakarta.persistence.Entity;;
 
-@Document
+@Document(collection = "Patient")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 public class Patient {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private @Getter @Setter String id;
     private @Getter @Setter String firstName;
     private @Getter @Setter String lastName;

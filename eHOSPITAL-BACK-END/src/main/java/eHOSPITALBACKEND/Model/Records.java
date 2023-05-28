@@ -10,7 +10,7 @@ import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-@Document
+@Document (collection = "Records")
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
