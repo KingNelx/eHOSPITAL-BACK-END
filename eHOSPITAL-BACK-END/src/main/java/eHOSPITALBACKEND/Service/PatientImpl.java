@@ -55,6 +55,10 @@ public class PatientImpl implements PatientService {
         return patientRepo.findById(id);
     }
 
+
+    // @Override
+    // public ResponseEntity <String> 
+
     @Override
     public ResponseEntity<String> removePatientsData(@PathVariable String id) {
         if (!patientRepo.findById(id).isPresent()) {
