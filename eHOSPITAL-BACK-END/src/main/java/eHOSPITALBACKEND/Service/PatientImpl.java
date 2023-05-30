@@ -55,16 +55,46 @@ public class PatientImpl implements PatientService {
         return patientRepo.findById(id);
     }
 
+    @Override
+    public ResponseEntity<String> updatePatientInfo(@PathVariable String id, @RequestBody Patient newPatient) {
+        Patient existingPatient = patientRepo.findById(id)
+                .orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
+        Records existingRecords = existingPatient.getRecords();
 
-    // @Override
-    // public ResponseEntity <String> 
+        if (existingPatient != null && existingRecords != null) {
+            existingPatient.setFirstName(newPatient.getFirstName());
+            existingPatient.setLastName(newPatient.getLastName());
+            existingPatient.setMiddleName(newPatient.getMiddleName());
+            existingPatient.setAddress(newPatient.getAddress());
+            existingPatient.setContactNumber(newPatient.getContactNumber());
+            existingPatient.setAge(newPatient.getAge());
+            existingPatient.setDateOfBirth(newPatient.getDateOfBirth());
+
+            existingRecords.setEmergencyContact(newPatient.getRecords().getEmergencyContact());
+            existingRecords.setVitalSigns(newPatient.getRecords().getVitalSigns());
+            existingRecords.setLaboratory(newPatient.getRecords().getLaboratory());
+            existingRecords.setMedications(newPatient.getRecords().getMedications());
+
+            patientRepo.save(existingPatient);
+            recordsRepo.save(existingRecords);
+
+            return ResponseEntity.ok(" PATIENT ID: " + id + " UPDATED SUCCESSFULLY ");
+        }
+        return null;
+
+    }
 
     @Override
     public ResponseEntity<String> removePatientsData(@PathVariable String id) {
-        if (!patientRepo.findById(id).isPresent()) {
+        
+        Optional <Patient> patientHandler = patientRepo.findById(id);
+
+        if (!patientHandler.isPresent()) {
             throw new HttpClientErrorException(HttpStatus.NO_CONTENT);
         }
 
+        Patient deletePatientData = patientHandler.get();
+        recordsRepo.deleteById(deletePatientData.getRecords().getId());
         patientRepo.deleteById(id);
         return ResponseEntity.ok("Patient Data with ID: " + id + " has been deleted ");
     }

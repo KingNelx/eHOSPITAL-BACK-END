@@ -18,7 +18,6 @@ public class Records {
 
     @Id
     private @Getter @Setter String id;
-    private @Getter @Setter int patientID;
     private @Getter @Setter String emergencyContact;
     @ElementCollection
     private @Getter @Setter List<String> vitalSigns;

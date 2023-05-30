@@ -10,9 +10,9 @@ import jakarta.persistence.GenerationType;
 
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-import jakarta.persistence.Entity;;
+import jakarta.persistence.Entity;
 
-@Document(collection = "Patient")
+@Document(collection = "Patients")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor

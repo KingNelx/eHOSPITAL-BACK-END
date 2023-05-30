@@ -20,7 +20,7 @@ public interface PatientService {
     Optional<Patient> getPatientByID(String id);
 
     // update patient by id
-    ResponseEntity <String> updatePatientInfo(String id);
+    ResponseEntity <String> updatePatientInfo(String id, Patient newPatient);
 
     // delete patient by id
     ResponseEntity <String> removePatientsData(String id);
