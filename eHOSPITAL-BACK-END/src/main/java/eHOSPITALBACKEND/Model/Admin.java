@@ -10,14 +10,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
-@Document (collection = "Admins")
+@Document(collection = "Admins")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 public class Admin {
-        
+
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private @Getter @Setter String id;
     private @Getter @Setter String firstName;
     private @Getter @Setter String lastName;

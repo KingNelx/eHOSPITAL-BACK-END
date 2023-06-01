@@ -25,4 +25,6 @@ public class Records {
     private @Getter @Setter List<String> laboratory;
     @ElementCollection
     private @Getter @Setter List <String> medications;
+    @ElementCollection
+    private @Getter @Setter List <String> covidPatient;
 }

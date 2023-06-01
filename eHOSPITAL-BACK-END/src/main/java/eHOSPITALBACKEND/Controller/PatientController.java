@@ -2,6 +2,7 @@ package eHOSPITALBACKEND.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import eHOSPITALBACKEND.Service.PatientService;
 
 @RestController
 @RequestMapping("/api/patient")
+@CrossOrigin(origins = "http://localhost:5173/")
 public class PatientController {
 
     @Autowired
@@ -26,25 +28,25 @@ public class PatientController {
     @PostMapping("/registerPatient")
     public ResponseEntity<String> addPatient(@RequestBody Patient addPatient) {
         return patientService.addPatient(addPatient);
-    } 
+    }
 
     @GetMapping("/getAllPatients")
-    public List <Patient> getAllPatients(){
+    public List<Patient> getAllPatients() {
         return patientService.getAllPatients();
     }
 
     @GetMapping("/getPatientByID/{id}")
-    public Optional <Patient> getPatientByID(@PathVariable String id){
+    public Optional<Patient> getPatientByID(@PathVariable String id) {
         return patientService.getPatientByID(id);
     }
 
     @PutMapping("/updatePatientData/{id}")
-    public ResponseEntity <String> updatePatientData(@PathVariable String id, @RequestBody Patient newPatient){
+    public ResponseEntity<String> updatePatientData(@PathVariable String id, @RequestBody Patient newPatient) {
         return patientService.updatePatientInfo(id, newPatient);
     }
 
     @DeleteMapping("/removePatientsData/{id}")
-    public ResponseEntity <String> deletePatientsData(@PathVariable String id){
+    public ResponseEntity<String> deletePatientsData(@PathVariable String id) {
         return patientService.removePatientsData(id);
     }
 
