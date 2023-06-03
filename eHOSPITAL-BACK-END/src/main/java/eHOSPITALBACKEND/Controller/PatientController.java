@@ -19,7 +19,7 @@ import eHOSPITALBACKEND.Service.PatientService;
 
 @RestController
 @RequestMapping("/api/patient")
-@CrossOrigin(origins = "http://localhost:5173/")
+@CrossOrigin(origins = "http://localhost:5173/    ")
 public class PatientController {
 
     @Autowired
