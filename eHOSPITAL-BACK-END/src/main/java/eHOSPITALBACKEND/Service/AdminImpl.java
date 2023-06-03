@@ -20,7 +20,7 @@ public class AdminImpl implements AdminService {
     @Override
     public ResponseEntity<String> registerAdmin(Admin registerAdmin) {
         Optional<Admin> existingEmail = adminRepo.findByEmail(registerAdmin.getEmail());
-        Optional<Admin> existingUserName = adminRepo.findByUserName(registerAdmin.getUsername());
+        Optional<Admin> existingUserName = adminRepo.findByUsername(registerAdmin.getUsername());
 
         if (existingEmail.isPresent() && existingUserName.isPresent()) {
             throw new HttpClientErrorException(HttpStatus.UNAUTHORIZED);
