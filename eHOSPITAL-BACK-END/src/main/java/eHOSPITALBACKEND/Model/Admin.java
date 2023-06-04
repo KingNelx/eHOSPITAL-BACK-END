@@ -24,4 +24,5 @@ public class Admin {
     private @Getter @Setter String email;
     private @Getter @Setter String password;
     private @Getter @Setter String username;
+    private @Getter @Setter String profile;
 }

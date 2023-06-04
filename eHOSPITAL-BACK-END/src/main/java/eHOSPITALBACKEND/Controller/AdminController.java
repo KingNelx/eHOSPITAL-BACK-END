@@ -1,5 +1,7 @@
 package eHOSPITALBACKEND.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +30,11 @@ public class AdminController {
     public ResponseEntity<String> logInAdmin(@RequestParam String email, @RequestParam String username,
             @RequestParam String password) {
         return adminService.logInAdmin(email, username, password);
+    }
+
+    @GetMapping("/getAllAdmins")
+    public List <Admin> getAllAdmins(){
+        return adminService.getAllAdmins();
     }
 
 }
