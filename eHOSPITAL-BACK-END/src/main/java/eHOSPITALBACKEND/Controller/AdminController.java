@@ -27,9 +27,9 @@ public class AdminController {
     }
 
     @GetMapping("/logInAdmin")
-    public ResponseEntity<String> logInAdmin(@RequestParam String email, @RequestParam String username,
-            @RequestParam String password) {
-        return adminService.logInAdmin(email, username, password);
+    public ResponseEntity<String> logInAdmin(@RequestParam String username,
+            @RequestParam String password ) {
+        return adminService.logInAdmin(username, password);
     }
 
     @GetMapping("/getAllAdmins")

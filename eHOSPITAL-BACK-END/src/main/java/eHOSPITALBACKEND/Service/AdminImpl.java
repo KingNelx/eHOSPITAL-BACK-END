@@ -32,9 +32,9 @@ public class AdminImpl implements AdminService {
     }
 
     @Override
-    public ResponseEntity<String> logInAdmin(@RequestParam String email, @RequestParam String username,
+    public ResponseEntity<String> logInAdmin(@RequestParam String username,
             @RequestParam String password) {
-        Admin adminInfo = adminRepo.findByEmailAndUsernameAndPassword(email, username, password);
+        Admin adminInfo = adminRepo.findByUsernameAndPassword(username, password);
         if (adminInfo == null) {
             throw new HttpClientErrorException(HttpStatus.UNAUTHORIZED);
         }

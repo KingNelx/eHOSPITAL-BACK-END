@@ -9,7 +9,7 @@ import eHOSPITALBACKEND.Model.Admin;
 public interface AdminService {
     
     ResponseEntity <String> registerAdmin(Admin registerAdmin);
-    ResponseEntity <String> logInAdmin(String email, String username, String password);
+    ResponseEntity <String> logInAdmin(String username, String password);
     List <Admin> getAllAdmins();
 
 }
