@@ -1,4 +1,7 @@
 package eHOSPITALBACKEND.Repository;
 
-public interface DoctorRepo {
+import eHOSPITALBACKEND.Entity.Doctor;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface DoctorRepo extends MongoRepository <Doctor, String> {
 }
