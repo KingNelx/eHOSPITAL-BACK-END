@@ -18,6 +18,7 @@ public class Doctor {
     private @Getter @Setter String firstName;
     private @Getter @Setter String lastName;
     private @Getter @Setter String contactNumber;
+    private @Getter @Setter String yrsOfExp;
     private @Getter @Setter String email;
     private @Getter @Setter String userName;
     private @Getter @Setter String password;
