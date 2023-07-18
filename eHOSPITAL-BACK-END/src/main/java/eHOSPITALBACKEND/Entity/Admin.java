@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
 import jakarta.persistence.Entity;
-import jakarta.persistence.ElementCollection;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @AllArgsConstructor
