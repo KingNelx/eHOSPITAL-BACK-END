@@ -23,11 +23,18 @@ public class Patient {
     @Column(nullable = false)
     private @Getter @Setter String gender;
     @Column(nullable = false)
+    private @Getter @Setter String contactNumber;
+    @Column(nullable = false)
     private @Getter @Setter String age;
     @Column(nullable = false)
     private @Getter @Setter String temporaryAddress;
+    @Column(nullable = false)
     private @Getter @Setter String permanentAddress;
+    @Column(nullable = false)
     @ElementCollection
     private @Getter @Setter List <String> medicalRecords;
+    @Column(nullable = false)
+    @ElementCollection
+    private @Getter @Setter List <String> vaccineRecords;
 
 }
