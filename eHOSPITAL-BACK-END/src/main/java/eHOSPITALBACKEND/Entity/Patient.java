@@ -21,6 +21,8 @@ public class Patient {
     @Column(nullable = false)
     private @Getter @Setter String lastName;
     @Column(nullable = false)
+    private @Getter @Setter String patientType;
+    @Column(nullable = false)
     private @Getter @Setter String gender;
     @Column(nullable = false)
     private @Getter @Setter String contactNumber;
@@ -33,8 +35,5 @@ public class Patient {
     @Column(nullable = false)
     @ElementCollection
     private @Getter @Setter List <String> medicalRecords;
-    @Column(nullable = false)
-    @ElementCollection
-    private @Getter @Setter List <String> vaccineRecords;
 
 }
